@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Screenshots</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: #05090c;
+            color: #e9fff7;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #00ffc8;
+            text-shadow: 0 0 8px #00ffc8;
+        }
+
+        .screenshot-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 255, 200, 0.18);
+            border-radius: 14px;
+            backdrop-filter: blur(12px);
+            padding: 12px;
+            transition: .3s;
+            cursor: pointer;
+        }
+
+        .screenshot-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 20px #00ffc836;
+        }
+
+        .screenshot-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        
+        .modal-dialog {
+            max-width: 70% !important; /* wider modal */
+        }
+        /* Modal image size */
+        .modal-img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Glow button */
+        .glow-btn {
+            border: 2px solid #00ffc8;
+            color: #00ffc8;
+            padding: 10px 28px;
+            border-radius: 8px;
+            transition: .3s;
+        }
+
+        .glow-btn:hover {
+            background: #00ffc8;
+            color: black;
+            box-shadow: 0 0 18px #00ffc8;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container py-5">
+        <h2 class="section-title text-center mb-5">Project Screenshots</h2>
+
+        <div class="row g-4">
+
+            <!-- Screenshot 1 -->
+            <div class="col-md-4">
+                <div class="screenshot-card" onclick="openModal('img/customer-home.png')">
+                    <img src="img/customer-home.png" alt="Screenshot 1">
+                </div>
+                <div class="text-center mt-2">
+                <p style="color:#00ffc8; text-shadow:0 0 5px #00ffc86a; font-size:1rem;">
+                    Home    </p>
+                </div>
+            </div>
+            <!-- Screenshot 1 -->
+            <div class="col-md-4">
+                <div class="screenshot-card" onclick="openModal('img/customer-reg.png')">
+                    <img src="img/customer-reg.png" alt="Screenshot 1">
+                </div>
+                <div class="text-center mt-2">
+                <p style="color:#00ffc8; text-shadow:0 0 5px #00ffc86a; font-size:1rem;">
+                    Registration    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="screenshot-card" onclick="openModal('img/customer-dashboard.png')">
+                    <img src="img/customer-dashboard.png" alt="Screenshot 1">
+                </div>
+                <div class="text-center mt-2">
+                <p style="color:#00ffc8; text-shadow:0 0 5px #00ffc86a; font-size:1rem;">
+                    Customer-Dashboard    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="screenshot-card" onclick="openModal('img/insurance-admin-dashboard.png')">
+                    <img src="img/insurance-admin-dashboard.png" alt="Screenshot 1">
+                </div>
+                <div class="text-center mt-2">
+                <p style="color:#00ffc8; text-shadow:0 0 5px #00ffc86a; font-size:1rem;">
+                    Admin Dashboard.png   </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="screenshot-card" onclick="openModal('img/itotal-registered-users.png')">
+                    <img src="img/itotal-registered-users.png" alt="Screenshot 1">
+                </div>
+                <div class="text-center mt-2">
+                <p style="color:#00ffc8; text-shadow:0 0 5px #00ffc86a; font-size:1rem;">
+                    Registerde Users    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="screenshot-card" onclick="openModal('img/icategory-view.png')">
+                    <img src="img/icategory-view.png" alt="Screenshot 1">
+                </div>
+                <div class="text-center mt-2">
+                <p style="color:#00ffc8; text-shadow:0 0 5px #00ffc86a; font-size:1rem;">
+                    Category View    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="screenshot-card" onclick="openModal('img/ipolicy-view.png')">
+                    <img src="img/ipolicy-view.png" alt="Screenshot 1">
+                </div>
+                <div class="text-center mt-2">
+                <p style="color:#00ffc8; text-shadow:0 0 5px #00ffc86a; font-size:1rem;">
+                    Policy View  </p>
+                </div>
+            </div>
+            
+            
+
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="index.html" class="glow-btn">Back to Portfolio</a>
+        </div>
+    </div>
+
+    <!-- Modal Preview -->
+    <div class="modal fade" id="imgModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content" style="background:#041417; border:1px solid #00ffc836; box-shadow:0 0 25px #00ffc83f;">
+                <div class="modal-body">
+                    <img id="modalImage" class="modal-img">
+                </div>
+                <button class="btn glow-btn mx-auto mb-3" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function openModal(imgSrc) {
+            document.getElementById("modalImage").src = imgSrc;
+            let modal = new bootstrap.Modal(document.getElementById('imgModal'));
+            modal.show();
+        }
+    </script>
+
+</body>
+
+</html>

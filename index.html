@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>***** | Futuristic Portfolio</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- PREMIUM FUTURISTIC CSS -->
+    <style>
+        body {
+            background: #05090c;
+            color: #e9fff7;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 2000px !important;
+        }
+
+
+        /* Neon */
+        .neon {
+            color: #00ffc8;
+    text-shadow: 0 0 4px #00ffc8, 0 0 10px #00ffc8;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            height: 100vh;
+            position: relative;
+            background: radial-gradient(circle at top left, rgba(0, 255, 200, 0.18), transparent 60%),
+                radial-gradient(circle at bottom right, rgba(0, 255, 200, 0.1), transparent 60%),
+                #030b0f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Animated grid */
+        .grid-overlay {
+            position: absolute;
+            width: 300%;
+            height: 300%;
+            background-image:
+                linear-gradient(#00ffc81c 1px, transparent 1px),
+                linear-gradient(90deg, #00ffc81c 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 14s linear infinite;
+        }
+
+        @keyframes gridMove {
+            from {
+                transform: translate(-50px, -50px);
+            }
+
+            to {
+                transform: translate(0, 0);
+            }
+        }
+
+        /* Glow Button */
+        .glow-btn {
+            border: 2px solid #00ffc8;
+            color: #00ffc8;
+            padding: 12px 32px;
+            border-radius: 8px;
+            transition: .3s;
+            font-weight: 600;
+        }
+
+        .glow-btn:hover {
+            background: #00ffc8;
+            color: #000;
+            box-shadow: 0 0 18px #00ffc8;
+        }
+
+        /* Glass Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 255, 200, 0.15);
+            border-radius: 16px;
+            backdrop-filter: blur(12px);
+            padding: 25px;
+            transition: .3s;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 25px rgba(0, 255, 200, 0.22);
+        }
+
+        /* Project Card */
+        .project-card {
+            background: #041417;
+            border: 1px solid #00ffc826;
+            border-radius: 14px;
+            padding: 25px;
+            transition: .3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px #00ffc833;
+        }
+
+        /* Skills */
+        .skill-box {
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #00ffc852;
+            background: rgba(0, 255, 200, 0.05);
+            transition: .3s;
+        }
+
+        .skill-box:hover {
+            box-shadow: 0 0 18px #00ffc833;
+            transform: translateY(-6px);
+        }
+
+        .section-padding {
+            padding: 90px 0;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #00ffc8;
+            text-shadow: 0 0 10px #00ffc8;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            padding: 20px;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+            font-size: 20px !important;
+        }
+        h1 { font-size: 3.5rem !important; }
+        h2 { font-size: 2.5rem !important; }
+        h3 { font-size: 1.8rem !important; }
+        p  { font-size: 1.2rem !important; }
+        
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top shadow-lg">
+        <div class="container">
+            <a class="navbar-brand fw-bold neon" href="#">Portfolio</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero" class="hero-section">
+        <div class="grid-overlay"></div>
+        <div class="container position-relative">
+            <h1 class="display-3 fw-bold neon">Arjun P S</h1>
+            <p class="lead mt-3">Developer Entusiast</p>
+            <a href="#projects" class="btn glow-btn mt-4">View My Work</a>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="glass-card mt-4">
+                <p>
+                     Enthusiastic and detail-oriented Software Developer with a strong foundation in programming, data
+ structures, and object-oriented principles. Proficient in writing clean, efficient code for web
+ development, automation. Familiar with tools like Git, Github, SQL, and REST APIs. Eager to apply
+ problem-solving skills and grow in a dynamic, collaborative environment. 
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+<!-- EXPERIENCE SECTION -->
+<section id="experience" class="section-padding bg-black">
+    <div class="container">
+        <h2 class="section-title">Experience 💼</h2>
+
+        <div class="glass-card mt-4">
+
+            <!-- Experience 1 -->
+            <div class="exp-item mb-4">
+                <h4 class="neon"> IT Support, Chinmaya International Foundation</h4>
+                <p style="color:#c9fff2; margin:5px 0;">
+                    <strong>Duration:</strong> Apr 2023 – Sep 2024
+                </p>
+                <p style="color:#c9fff2;">
+                    • Provided first-line support for hardware, software, and network issues for end-users <br>
+                    • Guided non-technical users through troubleshooting steps and provided basic IT training. <br>
+                    • Troubleshot Windows/Mac OS, Microsoft Office, and common enterprise software problems <br>
+                    • Assisted in setting up and configuring hardware, software.
+                </p>
+            </div>
+
+
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ACADEMIC SECTION -->
+<section id="academic" class="section-padding">
+    <div class="container">
+        <h2 class="section-title">Academic Qualification📋</h2>
+
+        <div class="glass-card mt-4">
+
+            <!-- Qualification Item 1 -->
+            <div class="mb-4">
+                <h4 class="neon">Bachelor of Computer Application</h4>
+                <p class="mt-2" style="color:#c9fff2">
+                    Mahatma Gandhi University <br>
+                    Year: 2020 – 2023 <br>
+                    Completed✅
+                </p>
+            </div>
+
+            <hr style="border-color:#00ffc82f">
+
+            <!-- Qualification Item 2 -->
+            <div class="mb-4 mt-4">
+                <h4 class="neon">Master of Computer Application</h4>
+                <p class="mt-2" style="color:#c9fff2">
+                    Mahatma Gandhi University <br>
+                    Year: 2024 – 2026 <br>
+                    Pursuing🎓
+                </p>
+            </div>
+
+            <hr style="border-color:#00ffc82f">
+
+            <!-- Qualification Item 3 -->
+            <div class="mt-4">
+                <h4 class="neon">Enti Elivate Python Developer</h4>
+                <p class="mt-2" style="color:#c9fff2">
+                    Entri Academy<br>
+                    Year: 2025 <br>
+                    Completed✅
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+    <!-- SKILLS -->
+    <section id="skills" class="section-padding bg-black">
+        <div class="container">
+            <h2 class="section-title">Skills💡</h2>
+
+            <div class="row mt-4 g-4">
+                <div class="col-md-3 col-6"><div class="skill-box">Python</div></div>
+                <div class="col-md-3 col-6"><div class="skill-box">Django</div></div>
+                <div class="col-md-3 col-6"><div class="skill-box">PHP</div></div>
+                <div class="col-md-3 col-6"><div class="skill-box">C Programming</div></div>
+                <div class="col-md-3 col-6"><div class="skill-box">Linux</div></div>
+                <div class="col-md-3 col-6"><div class="skill-box">Java</div></div>
+                <div class="col-md-3 col-6"><div class="skill-box">HTML,CSS</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Projects 📁</h2>
+
+            <div class="row mt-5 g-4">
+                <div class="col-md-4">
+                    <div class="project-card position-relative">
+                        <h4 class="neon">E-Learning Platform</h4>
+                        <p>
+                        A web-based application designed to provide online education, training, 
+                        and skill development. Built using Python Django.
+                        </p>
+
+                        <!-- VIEW BUTTON -->
+                        <a href="e-learning.html" class="btn glow-btn mt-4 w-100" style="border-radius:50px;">View Project →</a>
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="project-card position-relative">
+                        <h4 class="neon">Insurance Management System</h4>
+                        <p>
+                        a web-based application designed to provides a scalable, and efficient platform for managing policies, claims, customers, and agents. 
+                        
+
+                        </p>
+
+                        <!-- VIEW BUTTON -->
+                        <a href="insurance-management.html" class="btn glow-btn mt-4 w-100" style="border-radius:50px;">View Project →</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="project-card position-relative">
+                        <h4 class="neon">Project3</h4>
+                        <p>
+                        
+                        </p>
+
+                        <!-- VIEW BUTTON -->
+                        <a href="#" class="btn glow-btn mt-4 w-100" style="border-radius:50px;">View Project →</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section-padding bg-black">
+        <div class="container">
+            <h2 class="section-title">Contact🔍</h2>
+
+            <div class="glass-card mt-4">
+                <p class="lead">Email : a***********@gmail.com</p>
+                <p class="lead">Mob   : +91**********</p>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center">
+        <p class="text-light">© Copyright | All Rights Reserved</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
+
