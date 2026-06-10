@@ -1,374 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>***** | Futuristic Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+    scroll-behavior:smooth;
+}
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+body{
+    background:#0f172a;
+    color:#fff;
+}
 
-    <!-- PREMIUM FUTURISTIC CSS -->
-    <style>
-        body {
-            background: #05090c;
-            color: #e9fff7;
-            font-family: 'Poppins', sans-serif;
-            overflow-x: hidden;
-        }
+/* Header */
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(15,23,42,0.9);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
 
-        .container {
-            max-width: 2000px !important;
-        }
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#38bdf8;
+}
 
+nav a{
+    text-decoration:none;
+    color:white;
+    margin-left:25px;
+    transition:.3s;
+}
 
-        /* Neon */
-        .neon {
-            color: #00ffc8;
-    text-shadow: 0 0 4px #00ffc8, 0 0 10px #00ffc8;
-        }
+nav a:hover{
+    color:#38bdf8;
+}
 
-        /* Hero Section */
-        .hero-section {
-            height: 100vh;
-            position: relative;
-            background: radial-gradient(circle at top left, rgba(0, 255, 200, 0.18), transparent 60%),
-                radial-gradient(circle at bottom right, rgba(0, 255, 200, 0.1), transparent 60%),
-                #030b0f;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
-        }
+/* Hero Section */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:100px 8%;
+    gap:60px;
+}
 
-        /* Animated grid */
-        .grid-overlay {
-            position: absolute;
-            width: 300%;
-            height: 300%;
-            background-image:
-                linear-gradient(#00ffc81c 1px, transparent 1px),
-                linear-gradient(90deg, #00ffc81c 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: gridMove 14s linear infinite;
-        }
+.hero-content{
+    flex:1;
+}
 
-        @keyframes gridMove {
-            from {
-                transform: translate(-50px, -50px);
-            }
+.hero-content h3{
+    font-size:24px;
+    color:#38bdf8;
+}
 
-            to {
-                transform: translate(0, 0);
-            }
-        }
+.hero-content h1{
+    font-size:60px;
+    margin:10px 0;
+}
 
-        /* Glow Button */
-        .glow-btn {
-            border: 2px solid #00ffc8;
-            color: #00ffc8;
-            padding: 12px 32px;
-            border-radius: 8px;
-            transition: .3s;
-            font-weight: 600;
-        }
+.hero-content p{
+    font-size:18px;
+    color:#cbd5e1;
+    margin-bottom:25px;
+}
 
-        .glow-btn:hover {
-            background: #00ffc8;
-            color: #000;
-            box-shadow: 0 0 18px #00ffc8;
-        }
+.btn{
+    display:inline-block;
+    padding:12px 30px;
+    background:#38bdf8;
+    color:#0f172a;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
 
-        /* Glass Card */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(0, 255, 200, 0.15);
-            border-radius: 16px;
-            backdrop-filter: blur(12px);
-            padding: 25px;
-            transition: .3s;
-        }
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 20px #38bdf8;
+}
 
-        .glass-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 0 25px rgba(0, 255, 200, 0.22);
-        }
+.hero-image{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
 
-        /* Project Card */
-        .project-card {
-            background: #041417;
-            border: 1px solid #00ffc826;
-            border-radius: 14px;
-            padding: 25px;
-            transition: .3s;
-        }
+.hero-image img{
+    width:350px;
+    height:350px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid #38bdf8;
+    box-shadow:0 0 40px rgba(56,189,248,.5);
+}
 
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 25px #00ffc833;
-        }
+/* Sections */
+section{
+    padding:100px 8%;
+}
 
-        /* Skills */
-        .skill-box {
-            padding: 16px;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid #00ffc852;
-            background: rgba(0, 255, 200, 0.05);
-            transition: .3s;
-        }
+.section-title{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:50px;
+    color:#38bdf8;
+}
 
-        .skill-box:hover {
-            box-shadow: 0 0 18px #00ffc833;
-            transform: translateY(-6px);
-        }
+/* About */
+.about-content{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    font-size:18px;
+    color:#cbd5e1;
+}
 
-        .section-padding {
-            padding: 90px 0;
-        }
+/* Skills */
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+}
 
-        /* Section Titles */
-        .section-title {
-            font-size: 36px;
-            font-weight: 700;
-            color: #00ffc8;
-            text-shadow: 0 0 10px #00ffc8;
-        }
+.skill-card{
+    background:#1e293b;
+    padding:25px;
+    text-align:center;
+    border-radius:15px;
+    transition:.3s;
+}
 
-        /* Footer */
-        footer {
-            background: #000;
-            padding: 20px;
-        }
+.skill-card:hover{
+    transform:translateY(-10px);
+    background:#38bdf8;
+    color:#0f172a;
+}
 
-        /* Smooth Scroll */
-        html {
-            scroll-behavior: smooth;
-            font-size: 20px !important;
-        }
-        h1 { font-size: 3.5rem !important; }
-        h2 { font-size: 2.5rem !important; }
-        h3 { font-size: 1.8rem !important; }
-        p  { font-size: 1.2rem !important; }
-        
-    </style>
+/* Projects */
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.project-card{
+    text-decoration:none;
+    background:#1e293b;
+    border-radius:18px;
+    overflow:hidden;
+    transition:.3s ease;
+    color:white;
+    display:block;
+}
+
+.project-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    display:block;
+}
+
+.project-content{
+    padding:20px;
+}
+
+.project-content h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+.project-content p{
+    color:#cbd5e1;
+    line-height:1.6;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 30px rgba(56,189,248,.3);
+}
+
+.project-card:hover img{
+    transform:scale(1.05);
+}
+
+.project-card img{
+    transition:.4s ease;
+}
+
+/* Contact */
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin:15px 0;
+    color:#cbd5e1;
+}
+
+.socials a{
+    display:inline-block;
+    margin:10px;
+    color:#38bdf8;
+    text-decoration:none;
+    font-size:20px;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#020617;
+    color:#94a3b8;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .hero{
+        flex-direction:column-reverse;
+        text-align:center;
+    }
+
+    .hero-content h1{
+        font-size:42px;
+    }
+
+    nav{
+        display:none;
+    }
+}
+</style>
 </head>
-
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top shadow-lg">
-        <div class="container">
-            <a class="navbar-brand fw-bold neon" href="#">Portfolio</a>
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navMenu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
+<header>
+    <div class="logo">Portfolio</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
     </nav>
+</header>
 
-    <!-- HERO -->
-    <section id="hero" class="hero-section">
-        <div class="grid-overlay"></div>
-        <div class="container position-relative">
-            <h1 class="display-3 fw-bold neon">Arjun P S</h1>
-            <p class="lead mt-3">Developer Entusiast</p>
-            <a href="#projects" class="btn glow-btn mt-4">View My Work</a>
-        </div>
-    </section>
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h3>Hello, I'm</h3>
+        <h1>ARJUN P S</h1>
+        <p>
+           Entry-Level Software Engineer
+        </p>
+        <a href="#contact" class="btn">Hire Me</a>
+    </div>
 
-    <!-- ABOUT -->
-    <section id="about" class="section-padding">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="glass-card mt-4">
-                <p>
-                     Enthusiastic and detail-oriented Software Developer with a strong foundation in programming, data
- structures, and object-oriented principles. Proficient in writing clean, efficient code for web
- development, automation. Familiar with tools like Git, Github, SQL, and REST APIs. Eager to apply
- problem-solving skills and grow in a dynamic, collaborative environment. 
-                </p>
-            </div>
-        </div>
-    </section>
-
-
-<!-- EXPERIENCE SECTION -->
-<section id="experience" class="section-padding bg-black">
-    <div class="container">
-        <h2 class="section-title">Experience 💼</h2>
-
-        <div class="glass-card mt-4">
-
-            <!-- Experience 1 -->
-            <div class="exp-item mb-4">
-                <h4 class="neon"> IT Support, Chinmaya International Foundation</h4>
-                <p style="color:#c9fff2; margin:5px 0;">
-                    <strong>Duration:</strong> Apr 2023 – Sep 2024
-                </p>
-                <p style="color:#c9fff2;">
-                    • Provided first-line support for hardware, software, and network issues for end-users <br>
-                    • Guided non-technical users through troubleshooting steps and provided basic IT training. <br>
-                    • Troubleshot Windows/Mac OS, Microsoft Office, and common enterprise software problems <br>
-                    • Assisted in setting up and configuring hardware, software.
-                </p>
-            </div>
-
-
-
-        </div>
+    <div class="hero-image">
+        <img src="https://i.pinimg.com/736x/22/51/67/225167cc0126ff5515c3224417db73c3.jpg" alt="Profile">
     </div>
 </section>
 
-
-
-<!-- ACADEMIC SECTION -->
-<section id="academic" class="section-padding">
-    <div class="container">
-        <h2 class="section-title">Academic Qualification📋</h2>
-
-        <div class="glass-card mt-4">
-
-            <!-- Qualification Item 1 -->
-            <div class="mb-4">
-                <h4 class="neon">Bachelor of Computer Application</h4>
-                <p class="mt-2" style="color:#c9fff2">
-                    Mahatma Gandhi University <br>
-                    Year: 2020 – 2023 <br>
-                    Completed✅
-                </p>
-            </div>
-
-            <hr style="border-color:#00ffc82f">
-
-            <!-- Qualification Item 2 -->
-            <div class="mb-4 mt-4">
-                <h4 class="neon">Master of Computer Application</h4>
-                <p class="mt-2" style="color:#c9fff2">
-                    Mahatma Gandhi University <br>
-                    Year: 2024 – 2026 <br>
-                    Pursuing🎓
-                </p>
-            </div>
-
-            <hr style="border-color:#00ffc82f">
-
-            <!-- Qualification Item 3 -->
-            <div class="mt-4">
-                <h4 class="neon">Enti Elivate Python Developer</h4>
-                <p class="mt-2" style="color:#c9fff2">
-                    Entri Academy<br>
-                    Year: 2025 <br>
-                    Completed✅
-                </p>
-            </div>
-
-        </div>
+<!-- About -->
+<section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+        <p>
+             Computer Application graduate (MCA, March 2026) with solid experience in python software development,
+REST API design, and database systems. Proficient in Python, C/C++, SQL, and Linux environments.
+Experienced in Agile development practices, test-driven approaches, code reviews, and collaborative software
+delivery. Passionate about leveraging data and technology to solve real-world  problems. Eager to contribute to
+innovative product development across big data, AI, DevOps, and cloud platforms such as AWS and Azure
+through the LexisNexis Risk Solutions Technology Graduate Program.  Familiar with AI/ML concepts, Prompt
+Engineering, Generative AI tools, and automation solutions. Passionate about building scalable software
+products and AI-enabled applications.
+        </p>
     </div>
 </section>
 
+<!-- Skills -->
+<section id="skills">
+    <h2 class="section-title">Skills</h2>
 
+    <div class="skills-grid">
+        <div class="skill-card">HTML5</div>
+        <div class="skill-card">CSS</div>
+        <div class="skill-card">JavaScript</div>
+        <div class="skill-card">C & C++</div>
+        <div class="skill-card">Python</div>
+        <div class="skill-card">Django</div>
+        <div class="skill-card">PHP</div>
+        <div class="skill-card">MySQL</div>
+        <div class="skill-card">ChatGPT</div>
+        <div class="skill-card">Git & GitHub</div>
+        <div class="skill-card">Linux</div>
+        <div class="skill-card">Windows</div>
+    </div>
+</section>
 
+<!-- Projects -->
+<section id="projects">
+    <h2 class="section-title">Projects</h2>
 
+    <div class="projects-grid">
 
-    <!-- SKILLS -->
-    <section id="skills" class="section-padding bg-black">
-        <div class="container">
-            <h2 class="section-title">Skills💡</h2>
-
-            <div class="row mt-4 g-4">
-                <div class="col-md-3 col-6"><div class="skill-box">Python</div></div>
-                <div class="col-md-3 col-6"><div class="skill-box">Django</div></div>
-                <div class="col-md-3 col-6"><div class="skill-box">PHP</div></div>
-                <div class="col-md-3 col-6"><div class="skill-box">C Programming</div></div>
-                <div class="col-md-3 col-6"><div class="skill-box">Linux</div></div>
-                <div class="col-md-3 col-6"><div class="skill-box">Java</div></div>
-                <div class="col-md-3 col-6"><div class="skill-box">HTML,CSS</div></div>
-                <div class="col-md-3 col-6"><div class="skill-box">AI</div></div>
-            </div>
+    <a href="#" class="project-card">
+        <img src="https://www.hdfcergo.com/images/default-source/motor-insurance/rto40015752c5074223a1f57a03c38fed17.jpg" alt="Crime Management System">
+        <div class="project-content">
+            <h3>RTO Administration</h3>
+            <p>
+                Developed an RTO Administration System to manage vehicle registrations, driving licenses, permits, and user records with secure authentication, role-based access control, and automated workflow management.
+            </p>
         </div>
-    </section>
+    </a>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section-padding">
-        <div class="container">
-            <h2 class="section-title">Projects 📁</h2>
-
-            <div class="row mt-5 g-4">
-                <div class="col-md-4">
-                    <div class="project-card position-relative">
-                        <h4 class="neon">E-Learning Platform</h4>
-                        <p>
-                        A web-based application designed to provide online education, training, 
-                        and skill development. Built using Python Django.
-                        </p>
-
-                        <!-- VIEW BUTTON -->
-                        <a href="https://github.com/arjun-python-developer/e-learning-project" class="btn glow-btn mt-4 w-100" style="border-radius:50px;">View Project →</a>
-
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="project-card position-relative">
-                        <h4 class="neon">Insurance Management System</h4>
-                        <p>
-                        a web-based application designed to provides a scalable, and efficient platform for managing policies, claims, customers, and agents. 
-                        
-
-                        </p>
-
-                        <!-- VIEW BUTTON -->
-                        <a href="insurance-management.html" class="btn glow-btn mt-4 w-100" style="border-radius:50px;">View Project →</a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="project-card position-relative">
-                        <h4 class="neon">Project3</h4>
-                        <p>
-                        
-                        </p>
-
-                        <!-- VIEW BUTTON -->
-                        <a href="#" class="btn glow-btn mt-4 w-100" style="border-radius:50px;">View Project →</a>
-                    </div>
-                </div>
-            </div>
-
+    <a href="#" class="project-card">
+        <img src="https://th.bing.com/th/id/OIP.YIvJ_1VNb5ooN4MuycTTeAHaE7?w=287&h=192&c=7&r=0&o=7&pid=1.7&rm=3" alt="E-Learning Platform">
+        <div class="project-content">
+            <h3>E-Learning Platform</h3>
+            <p>
+                Designed and developed an E-Learning Platform to facilitate online course management, student enrollment, content delivery, and progress tracking.
+            </p>
         </div>
-    </section>
+    </a>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section-padding bg-black">
-        <div class="container">
-            <h2 class="section-title">Contact🔍</h2>
-
-            <div class="glass-card mt-4">
-                <p class="lead">Email : a***********@gmail.com</p>
-                <p class="lead">Mob   : +91**********</p>
-                
-            </div>
+    <a href="#" class="project-card">
+        <img src="https://www.hyperlinkinfosystem.com/assets/case-study/insurance-management/insurance-management-system.jpg" alt="Portfolio Website">
+        <div class="project-content">
+            <h3>Insurance Management System</h3>
+            <p>
+                Designed and developed an  Insurance Management System to streamline customer registration, policy management, premium tracking, and claim processing workflows.
+            </p>
         </div>
-    </section>
+    </a>
 
-    <!-- FOOTER -->
-    <footer class="text-center">
-        <p class="text-light">© Copyright | All Rights Reserved</p>
-    </footer>
+    <a href="#" class="project-card">
+        <img src="https://th.bing.com/th/id/OIP.C15xygAIeZt2kqPeLXQwVQHaEJ?w=300&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="Portfolio Website">
+        <div class="project-content">
+            <h3>Carbon Footprint Tracker</h3>
+            <p>
+                Developed a Carbon Footprint Tracker to calculate and monitor carbon emissions from daily activities, featuring data visualization, emission analytics, and sustainability recommendations for users.
+            </p>
+        </div>
+    </a>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</div>
+
+
+</div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact">
+    <h2 class="section-title">Contact Me</h2>
+
+    <p>Email: arjunpspallom@gmail.com</p>
+
+    <div class="socials">
+        <a href="https://www.linkedin.com/in/developer-arjunps">LinkedIn</a>
+        <a href="https://github.com/arjun-python-developer">GitHub</a>
+        <a href="arjunpspallom@gmail.com">Gmail</a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Your Name | All Rights Reserved</p>
+</footer>
 
 </body>
-
 </html>
-
